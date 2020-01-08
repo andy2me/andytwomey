@@ -24,5 +24,6 @@
     "@nuxtjs/tailwindcss": "^1.0.0",
     "nuxt-purgecss": "^0.2.1",
     "postcss-loader": "^3.0.0"
-  }
+  },
+  "engines": { "node": "12.x" }
 }
