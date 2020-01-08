@@ -1,0 +1,28 @@
+{
+  "name": "andytwomey-prismic",
+  "version": "1.0.0",
+  "description": "Andy Twomey Personal Site",
+  "author": "dzigg",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.7.1",
+    "nuxt": "^2.0.0",
+    "postcss-easings": "^2.0.0",
+    "postcss-for": "^2.1.1",
+    "postcss-nested": "^4.1.2",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^2.1.1",
+    "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^1.0.0",
+    "nuxt-purgecss": "^0.2.1",
+    "postcss-loader": "^3.0.0"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "andytwomey",
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/now-builder",
+      "config": {}
+    }
+  ]
+}
