@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navigation :navigationContent="navigationContent" />
+    <Navigation :navigationContent="navigationContent" darkMode="true" />
     <BlogHero
       before-text="Blog"
       :title="$prismic.richTextAsPlain(blogContent.headline)"

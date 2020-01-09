@@ -1,32 +1,61 @@
 <template>
-  <nav class="section-container navigation">
-    <div class="text-center xs:mr-auto">
-      <nuxt-link to="/" class="stagger-1">
-        <!-- <svg class="logo" viewBox="0 0 271 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div :class="darkMode ? 'navigation-dark' : ''">
+    <nav class="section-container navigation">
+      <div class="text-center xs:mr-auto">
+        <nuxt-link to="/" class="stagger-1">
+          <!-- <svg class="logo" viewBox="0 0 271 35" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M213.6 34.2V31.7C213.6 31.3 213.7 31.1 213.9 31.1H214.1C215.1 31.1 216 31 216.6 30.8C217.2 30.6 217.7 30.3 218.1 29.7C218.5 29.2 218.8 28.4 219.1 27.3C219.2 27.2 219.2 27.1 219.1 27L212.8 8.4C212.8 8.3 212.8 8.2 212.8 8.1C212.8 7.8 213 7.7 213.3 7.7H216.8C217.2 7.7 217.4 7.9 217.5 8.2L221.3 20.8C221.3 20.9 221.4 21 221.5 21C221.6 21 221.6 21 221.6 20.8L225.3 8.2C225.4 7.9 225.6 7.7 226 7.7H229.5C229.7 7.7 229.9 7.8 230 7.9C230.1 8 230.1 8.2 230 8.4L223.2 28.3C222.7 29.7 222.1 31.1 221.3 32.3C220.7 33.2 219.8 33.9 218.8 34.2C217.3 34.6 215.8 34.8 214.3 34.8H214C213.7 34.8 213.6 34.6 213.6 34.2ZM199 12C198.4 12.5 197.9 13.2 197.7 14C197.5 14.5 197.4 15.1 197.4 15.6C197.4 15.7 197.4 15.8 197.6 15.8H205.4C205.6 15.8 205.6 15.7 205.6 15.6C205.5 15.1 205.5 14.7 205.4 14.2C205 12.4 203.3 11.2 201.5 11.3C200.4 11.2 199.6 11.5 199 12ZM204.7 23.2C205.4 22.8 206 22.3 206.4 21.7C206.5 21.5 206.7 21.4 206.9 21.4C207 21.4 207.2 21.4 207.3 21.5L209.2 23C209.4 23.2 209.5 23.3 209.5 23.5C209.5 23.6 209.5 23.7 209.4 23.8C208.6 25 207.6 25.9 206.4 26.5C205 27.2 203.5 27.5 201.9 27.5C200.1 27.6 198.3 27.1 196.8 26.1C195.4 25.1 194.4 23.7 193.8 22.1C193.3 20.7 193 19.1 193 17.4C193 15.6 193.1 14.3 193.4 13.4C193.8 11.7 194.9 10.1 196.3 9.1C197.8 8 199.7 7.4 201.6 7.5C206.4 7.5 209.2 10.1 210.1 15.3C210.2 16.1 210.3 17.2 210.4 18.4C210.4 18.8 210.2 19 209.8 19H197.8C197.7 19 197.6 19.1 197.6 19.2C197.6 19.9 197.7 20.5 197.8 20.9C198.1 21.8 198.6 22.5 199.4 23C200.2 23.5 201.2 23.8 202.4 23.8C203 23.8 203.9 23.6 204.7 23.2ZM187.1 9.2C188.2 10.4 188.8 12 188.8 14.1V26.6C188.8 27 188.6 27.2 188.2 27.2H185C184.6 27.2 184.4 27 184.4 26.6V15.1C184.4 13.9 184.1 13 183.4 12.3C182.7 11.6 181.8 11.2 180.9 11.3C179.8 11.3 179 11.6 178.3 12.3C177.6 13 177.3 13.9 177.3 15V26.6C177.3 27 177.1 27.2 176.7 27.2H173.5C173.1 27.2 172.9 27 172.9 26.6V15.1C173 14.1 172.6 13.1 171.9 12.3C171.2 11.6 170.3 11.2 169.4 11.3C168.5 11.3 167.7 11.6 167 12.1C166.4 12.7 166 13.5 165.9 14.4V26.6C165.9 27 165.7 27.2 165.3 27.2H162C161.6 27.2 161.4 27 161.4 26.6V8.3C161.4 7.9 161.6 7.7 162 7.7H165.3C165.7 7.7 165.9 7.9 165.9 8.3V9.3C165.9 9.4 165.9 9.5 166 9.5C166.1 9.5 166.1 9.5 166.2 9.4C167.3 8 168.9 7.4 171.1 7.4C172.2 7.4 173.4 7.6 174.4 8.1C175.3 8.6 176.1 9.3 176.6 10.3C176.6 10.4 176.7 10.4 176.8 10.4C176.9 10.4 176.9 10.4 176.9 10.3C177.5 9.3 178.3 8.6 179.3 8.1C180.3 7.6 181.4 7.4 182.6 7.4C184.4 7.4 186 8 187.1 9.2ZM150.7 22.9C151.4 22.3 151.9 21.5 152.2 20.6C152.5 19.8 152.6 18.7 152.6 17.4C152.6 16.2 152.5 15.1 152.2 14.2C152 13.3 151.4 12.5 150.7 12C150 11.5 149.1 11.2 148.2 11.2C147.2 11.2 146.4 11.5 145.7 12C145 12.6 144.5 13.3 144.2 14.2C143.9 15.1 143.8 16.2 143.8 17.4C143.8 18.7 143.9 19.7 144.2 20.6C144.4 21.5 145 22.3 145.7 22.9C146.4 23.4 147.3 23.7 148.3 23.7C149.2 23.7 150 23.4 150.7 22.9ZM142.9 26C141.4 25 140.4 23.5 139.9 21.8C139.5 20.5 139.2 19.1 139.2 17.4C139.2 15.8 139.4 14.3 139.8 13.1C140.3 11.4 141.4 9.9 142.9 9C144.5 8 146.3 7.5 148.2 7.5C150.2 7.5 151.8 8 153.3 9C154.7 10 155.8 11.4 156.3 13.1C156.8 14.3 157 15.8 157 17.5C157 19.1 156.8 20.5 156.3 21.8C155.2 25.4 151.8 27.8 148.1 27.6C146.3 27.6 144.5 27 142.9 26ZM114.5 26.7L109 8.4C109 8.3 109 8.3 109 8.2C109 8.1 109 7.9 109.1 7.8C109.2 7.7 109.4 7.7 109.5 7.7H112.9C113.3 7.7 113.5 7.9 113.6 8.2L116.8 20.7C116.8 20.8 116.9 20.9 116.9 20.9C116.9 20.9 117 20.8 117 20.7L120.3 8.2C120.4 7.8 120.6 7.7 121 7.7H124C124.4 7.7 124.6 7.9 124.7 8.2L128.1 20.7C128.1 20.8 128.2 20.8 128.2 20.8C128.3 20.8 128.3 20.8 128.4 20.7L131.7 8.2C131.8 7.8 132 7.7 132.4 7.7H135.7C135.9 7.7 136.1 7.8 136.2 7.9C136.3 8 136.3 8.2 136.3 8.4L130.8 26.7C130.7 27 130.5 27.2 130.1 27.2H126.7C126.3 27.2 126.1 27 126 26.7L122.7 15.3C122.7 15.2 122.6 15.2 122.5 15.2C122.4 15.2 122.4 15.2 122.4 15.3L119.4 26.7C119.3 27.1 119.1 27.2 118.7 27.2H115.3C114.8 27.2 114.5 27.1 114.5 26.7ZM106.6 1.1V3.7C106.6 4.1 106.4 4.3 106 4.3H99.1C99 4.3 98.9 4.4 98.9 4.5V26.5C98.9 26.9 98.7 27.1 98.3 27.1H95C94.6 27.1 94.4 26.9 94.4 26.5V4.5C94.4 4.4 94.3 4.3 94.2 4.3H87.6C87.2 4.3 87 4.1 87 3.7V1.1C87 0.7 87.2 0.5 87.6 0.5H106C106.4 0.5 106.6 0.7 106.6 1.1ZM68.4 34.2V31.8C68.4 31.4 68.5 31.2 68.7 31.2H68.9C70 31.2 70.8 31.1 71.4 30.9C72 30.7 72.5 30.4 72.8 29.8C73.2 29.3 73.5 28.5 73.8 27.4C73.9 27.3 73.9 27.2 73.8 27.1L67.6 8.4C67.6 8.3 67.6 8.2 67.6 8.1C67.6 7.8 67.8 7.7 68.1 7.7H71.6C72 7.7 72.2 7.9 72.3 8.2L76 20.8C76 20.9 76.1 21 76.2 21C76.3 21 76.3 21 76.3 20.8L80 8.2C80.1 7.9 80.3 7.7 80.7 7.7H84.2C84.4 7.7 84.6 7.8 84.7 7.9C84.8 8 84.8 8.2 84.7 8.4L77.9 28.3C77.4 29.7 76.8 31.1 76 32.3C75.4 33.2 74.5 33.9 73.5 34.2C72.4 34.6 70.9 34.8 68.9 34.8H68.6C68.5 34.8 68.4 34.6 68.4 34.2ZM59.7 17.5C59.7 15.5 59.4 14 58.7 13C58.1 11.9 57 11.3 55.8 11.3C54.5 11.3 53.4 11.8 52.7 12.9C52 14 51.6 15.6 51.6 17.5C51.6 19.3 51.9 20.8 52.5 21.8C53.2 23 54.3 23.6 55.7 23.6C57 23.6 58 23 58.7 21.8C59.4 20.9 59.7 19.4 59.7 17.5ZM60.4 0.5H63.6C64 0.5 64.2 0.7 64.2 1.1V26.6C64.2 27 64 27.2 63.6 27.2H60.3C59.9 27.2 59.7 27 59.7 26.6V25.6C59.7 25.5 59.7 25.4 59.6 25.4C59.5 25.4 59.5 25.4 59.4 25.5C58.3 26.8 56.7 27.5 55 27.5C53.2 27.5 51.6 27 50.4 26.1C49.1 25.1 48.1 23.8 47.6 22.2C47.1 20.8 46.9 19.2 46.9 17.4C46.9 15.6 47.1 14 47.6 12.8C48.1 11.2 49 9.9 50.3 8.9C51.7 7.9 53.3 7.4 55 7.5C56.8 7.5 58.3 8.1 59.4 9.4C59.5 9.5 59.5 9.5 59.6 9.5C59.7 9.5 59.7 9.4 59.7 9.3V1.1C59.8 0.7 60 0.5 60.4 0.5ZM41.3 9.3C42.6 10.5 43.2 12.2 43.2 14.3V26.6C43.2 27 43 27.2 42.6 27.2H39.3C38.9 27.2 38.7 27 38.7 26.6V15.2C38.7 14 38.4 13.1 37.7 12.4C37 11.7 36 11.3 35 11.3C33.9 11.3 33 11.7 32.3 12.4C31.6 13.2 31.2 14.2 31.3 15.2V26.7C31.3 27.1 31.1 27.3 30.7 27.3H27.4C27 27.3 26.8 27.1 26.8 26.7V8.3C26.8 7.9 27 7.7 27.4 7.7H30.7C31.1 7.7 31.3 7.9 31.3 8.3V9.3C31.3 9.4 31.3 9.5 31.4 9.5C31.5 9.5 31.5 9.5 31.6 9.4C32.7 8 34.3 7.3 36.4 7.3C38.3 7.4 40 8 41.3 9.3ZM7.89998 19.1H15.8C15.9 19.1 16 19 16 18.8L12 5.8C12 5.7 11.9 5.6 11.9 5.6C11.9 5.6 11.8 5.6 11.7 5.8L7.69998 18.8C7.69998 19 7.69998 19.1 7.89998 19.1ZM18.4 26.7L17.2 22.8C17.2 22.7 17.1 22.6 16.9 22.6H6.79998C6.69998 22.6 6.59998 22.7 6.49998 22.8L5.29998 26.7C5.19998 27 4.99998 27.2 4.59998 27.2H1.09998C0.899976 27.2 0.699976 27.1 0.699976 27C0.599976 26.9 0.599976 26.7 0.599976 26.5L8.89997 1C8.99998 0.7 9.19998 0.5 9.59998 0.5H14.1C14.5 0.5 14.7 0.7 14.8 1L23.1 26.5C23.1 26.5 23.1 26.6 23.1 26.7C23.1 27 22.9 27.2 22.6 27.2H19.1C18.7 27.2 18.5 27 18.4 26.7Z" fill="#1A202C"/>
           <path d="M246.2 24.4L241.7 28.9L239.1 26.3L246.2 19.3L252 25L257.8 19.3L263.6 25L268.1 20.5L270.7 23.1L263.6 30.1L257.8 24.3L252 30.1L246.2 24.4Z" fill="#5F00FF"/>
         </svg> -->
-        <img class="logo" :src="navigationContent.logo.url" :alt="navigationContent.logo.alt" />
-      </nuxt-link>  
-    </div>
-    <ul class="flex items-center justify-around w-full xs:w-auto">
-      <li v-for="(link, index) in navigationContent.links" :key="link.id" :class="'xs:ml-5 sm:ml-10 stagger-' + (index + 2)">
-        <nuxt-link v-if="link.type === 'Link'" :to="link.href[0].text" class="link">{{ link.text[0].text }}</nuxt-link>
-        <nuxt-link v-if="link.type === 'Button'" :to="link.href[0].text"  class="cta">{{ link.text[0].text }}</nuxt-link>        
-      </li>
-      <!-- <li v-for="menuLink in menuLinks" :key="menuLink.id">
+
+          <img
+            class="logo"
+            :src="
+              darkMode
+                ? navigationContent.logo_dark.url
+                : navigationContent.logo.url
+            "
+            :alt="
+              darkMode
+                ? navigationContent.logo_dark.alt
+                : navigationContent.logo.alt
+            "
+          />
+        </nuxt-link>
+      </div>
+
+      <ul class="flex items-center justify-around w-full xs:w-auto">
+        <li
+          v-for="(link, index) in navigationContent.links"
+          :key="link.id"
+          :class="'xs:ml-5 sm:ml-10 stagger-' + (index + 2)"
+        >
+          <nuxt-link
+            v-if="link.type === 'Link'"
+            :to="link.href[0].text"
+            class="link"
+            >{{ link.text[0].text }}</nuxt-link
+          >
+          <nuxt-link
+            v-if="link.type === 'Button'"
+            :to="link.href[0].text"
+            class="cta"
+            >{{ link.text[0].text }}</nuxt-link
+          >
+        </li>
+        <!-- <li v-for="menuLink in menuLinks" :key="menuLink.id">
         <prismic-link :field="menuLink.link">{{ $prismic.richTextAsPlain(menuLink.label) }}</prismic-link>
       </li> -->
-      <!-- {{ navigationContent }} -->
-    </ul>
-  </nav>
+        <!-- {{ navigationContent }} -->
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'navigation',
-  props: ['navigationContent'],
-
+  name: "navigation",
+  props: ["navigationContent", "darkMode"]
 
   // data () {
   //   return {
@@ -38,57 +67,92 @@ export default {
   //     ]
   //   }
   // },
-}
+};
 </script>
 
-
-
 <style lang="postcss" scoped>
-  .navigation {
-    @apply flex flex-col justify-between items-center pt-5 mx-auto;
-    @screen xs { & { @apply flex-row } }
-    @screen md { & { @apply pt-10 } }
-
-    nav {
-      @apply mt-2;
-      @screen xs { & { @apply mt-0 } } 
+.navigation {
+  @apply flex flex-col justify-between items-center pt-5 mx-auto;
+  @screen xs {
+    & {
+      @apply flex-row;
     }
-
-    &-dark { 
-      .link { @apply text-white }
-     }
+  }
+  @screen md {
+    & {
+      @apply pt-10;
+    }
   }
 
-
-  .logo {
-    @apply w-full mb-4;
-    max-width: 150px;
-    @screen xs { & { @apply mb-0 } }
-    @screen xl { & { @apply font-bold text-3xl } }
-  }
-
-  .link {
-    @apply inline-block py-2 border-b-2 border-transparent border-solid text-gray-700 font-semibold;
-    transition: 200ms easeInOutQuint all;
-    &:hover { @apply border-primary }
-    @screen xl { & { @apply text-2xl border-b-4; &:hover { @apply border-b-4 } } }
-  }
-
-  @for $x from 1 to 4 {
-    .stagger-$(x) { animation-name: stagger-$(x); animation-duration: 600ms; animation-iteration-count: 1; animation-timing-function: easeInSine; }
-    @keyframes stagger-$(x) {
-      0% {
-        opacity: 0;
-        transform: translateY(calc(10 * $(x)px));
-      }
-      50% {
-        opacity: 0;
-        transform: translateY(calc(10 * $(x)px));
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+  nav {
+    @apply mt-2;
+    @screen xs {
+      & {
+        @apply mt-0;
       }
     }
   }
+
+  &-dark {
+    @apply bg-gray-900;
+
+    .link {
+      @apply text-white;
+    }
+  }
+}
+
+.logo {
+  @apply w-full mb-4;
+  max-width: 150px;
+  @screen xs {
+    & {
+      @apply mb-0;
+    }
+  }
+  @screen xl {
+    & {
+      @apply font-bold text-3xl;
+    }
+  }
+}
+
+.link {
+  @apply inline-block py-2 border-b-2 border-transparent border-solid text-gray-700 font-semibold;
+  transition: 200ms easeInOutQuint all;
+  &:hover {
+    @apply border-primary;
+  }
+  @screen xl {
+    & {
+      @apply text-2xl border-b-4;
+      &:hover {
+        @apply border-b-4;
+      }
+    }
+  }
+}
+
+@for $x from 1 to 4 {
+  .stagger-$(x) {
+    animation-name: stagger-$(x);
+    animation-duration: 600ms;
+    animation-iteration-count: 1;
+    animation-timing-function: easeInSine;
+  }
+  @keyframes stagger-$(x) {
+    0% {
+      opacity: 0;
+      transform: translateY(calc(10 * $(x) px));
+    }
+    50% {
+      opacity: 0;
+      transform: translateY(calc(10 * $(x) px));
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
 </style>
