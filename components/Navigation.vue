@@ -142,13 +142,13 @@ export default {
   @keyframes stagger-$(x) {
     0% {
       opacity: 0;
-      // prettier-ignore
+      /* prettier-ignore */
       transform: translateY(calc(10 * $(x)px));
     }
     50% {
       opacity: 0;
 
-      // prettier-ignore
+      /* prettier-ignore */
       transform: translateY(calc(10 * $(x)px));
     }
     100% {
