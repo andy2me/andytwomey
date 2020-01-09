@@ -95,7 +95,6 @@ export default {
 
   &-dark {
     @apply bg-gray-900;
-
     .link {
       @apply text-white;
     }
@@ -143,11 +142,14 @@ export default {
   @keyframes stagger-$(x) {
     0% {
       opacity: 0;
-      transform: translateY(calc(10 * $(x) px));
+      // prettier-ignore
+      transform: translateY(calc(10 * $(x)px));
     }
     50% {
       opacity: 0;
-      transform: translateY(calc(10 * $(x) px));
+
+      // prettier-ignore
+      transform: translateY(calc(10 * $(x)px));
     }
     100% {
       opacity: 1;
