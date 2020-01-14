@@ -1,21 +1,17 @@
 html { @apply bg-primary;  }
-body { @apply m-0 p-0 bg-gray-200; box-sizing: border-box; }
+body { @apply p-0 m-0 bg-gray-200; box-sizing: border-box; }
 .cta {
-  @apply inline-block py-2 px-3 bg-primary shadow-md text-white text-sm font-bold tracking-wider;
+  @apply inline-block px-3 py-2 text-sm font-bold tracking-wider text-white shadow-md bg-primary;
   transition: 1s easeOutCirc all;
-  @screen xl { & { @apply text-xl } }
 }
 .cta:hover { @apply shadow-lg; transform: translateY(-.1rem); }
 .cta-lg { @apply text-base py-4 px-5 }
 .highlight { box-shadow: inset 0 -0.5em 0 #CBD5E0; }
 .section-container { 
-  @apply mx-auto px-4;
+  @apply px-4 mx-auto;
   @screen sm { & { @apply max-w-full px-8 } } 
   @screen md { & { @apply max-w-3xl } }
   @screen lg { & { @apply max-w-6xl px-10 } }
-  @screen xl { & { @apply max-w-7xl px-12 } }
-  @screen xxl { & { @apply max-w-8xl px-16 } }
-  @screen xxxl { & { @apply max-w-9xl px-8 } }
 }
 /* .slideInFromBottom { animation-name: slideInFromBottom; animation-duration: 600ms; animation-iteration-count: 1; animation-timing-function: easeInCirc; } */
 .page-enter-active, .page-leave-active {

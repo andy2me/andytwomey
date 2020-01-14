@@ -109,11 +109,6 @@ export default {
       @apply mb-0;
     }
   }
-  @screen xl {
-    & {
-      @apply font-bold text-3xl;
-    }
-  }
 }
 
 .link {
@@ -121,14 +116,6 @@ export default {
   transition: 200ms easeInOutQuint all;
   &:hover {
     @apply border-primary;
-  }
-  @screen xl {
-    & {
-      @apply text-2xl border-b-4;
-      &:hover {
-        @apply border-b-4;
-      }
-    }
   }
 }
 

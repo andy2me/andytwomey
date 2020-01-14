@@ -2,30 +2,30 @@
   <div class="relative bg-gray-900">
     <div class="overflow-hidden">
       <div
-        class="section-container z-10 relative flex flex-col sm:pt-8 lg:mt-12 lg:pt-12"
+        class="relative z-10 flex flex-col section-container sm:pt-8 lg:mt-12 lg:pt-12"
       >
         <div class="w-full py-10 lg:pb-32">
           <span
             v-if="beforeText"
-            class="inline-block px-3 py-2 bg-primary text-sm text-white font-bold tracking-wider xl:text-2xl"
+            class="inline-block px-3 py-2 text-sm font-bold tracking-wider text-white bg-primary"
           >
             {{ beforeText }}
           </span>
 
           <h1
             v-html="title"
-            class="mt-6 text-gray-300 text-3xl leading-none tracking-wide font-bold xs:max-w-xs sm:max-w-md md:mt-12 md:text-5xl lg:max-w-3xl lg:text-6xl xl:max-w-6xl xl:text-7xl xxl:max-w-7xl xxl:text-8xl xxl:mt-12"
+            class="mt-6 text-3xl font-bold leading-none tracking-wide text-gray-300 xs:max-w-xs sm:max-w-md md:mt-12 md:text-5xl lg:max-w-3xl lg:text-6xl"
           ></h1>
 
           <p
             v-if="content"
             v-html="content"
-            class="font-medium text-gray-600 text-base mt-10 inline-block rounded-lg tracking-wide md:text-lg xl:max-w-3xl xxl:text-4xl xxl:leading-tight "
+            class="inline-block mt-10 text-base font-medium tracking-wide text-gray-600 rounded-lg md:text-lg"
           ></p>
 
           <img
             v-if="squiggle"
-            class="mt-12 xl:w-20 xxl:w-32 xxl:mt-32"
+            class="mt-12"
             src="https://cdn2.hubspot.net/hubfs/416563/AT/squiggle.svg"
             alt="squiggle"
           />
@@ -35,11 +35,11 @@
       </div>
       <a
         v-if="scrollDown"
-        class="z-10 hero-scroll absolute bottom-0 block w-10 h-10 bg-primary"
+        class="absolute bottom-0 z-10 block w-10 h-10 hero-scroll bg-primary"
         href="#"
       >
         <span
-          class="hero-scroll-arrow z-10 absolute block w-3 h-3 border-white border-r-4 border-b-4"
+          class="absolute z-10 block w-3 h-3 border-b-4 border-r-4 border-white hero-scroll-arrow"
         ></span>
       </a>
     </div>
@@ -92,20 +92,6 @@ export default {
   @screen lg {
     & {
       @apply max-w-full;
-    }
-  }
-  @screen xl {
-    & {
-      @apply pb-0 mb-0;
-      right: -8rem;
-      top: -4rem;
-    }
-  }
-  @screen xxl {
-    & {
-      top: auto;
-      bottom: 10rem;
-      right: -9rem;
     }
   }
 }
