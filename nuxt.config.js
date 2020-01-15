@@ -17,6 +17,11 @@ export default {
       }
     ],
     link: [
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Barlow:400,500,600,700&display=swap"
+      },
       { rel: "icon", type: "image/x-icon", href: "favicon.ico" },
       {
         rel: "icon",
