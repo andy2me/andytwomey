@@ -7,7 +7,7 @@
         <div class="w-full py-10 lg:pb-32">
           <span
             v-if="beforeText"
-            class="inline-block px-3 py-2 text-sm font-bold tracking-wider text-white bg-primary"
+            class="inline-block px-3 py-2 text-sm font-bold tracking-wider text-white courier-new bg-primary"
           >
             {{ beforeText }}
           </span>
