@@ -2,16 +2,41 @@
   <div>
     <Navigation :navigationContent="navigationContent" />
     <Hero
-      :before-text="homepageContent.before_text[0].text"
-      :title="homepageContent.hero_title[0].text"
+      before-text="Hey, I'm Andy."
+      title='I help Software businesses build <span class="highlight">smarter marketing engines</span>.'
       :content="false"
       :squiggle="true"
-      :img-src="homepageContent.hero_image.url"
-      :img-alt="homepageContent.hero_image.alt"
+      img-src="https://www.andytwomey.com/hs-fs/hubfs/Andy-the-hero.jpg"
+      img-alt="Andy the hero"
       :scroll-down="true"
     />
     <div class="py-12 bg-white" />
     <ContentTwoColumn />
+    <div class="section-container">
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name"/></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email"/></label>
+        </p>
+        <p>
+          <label
+            >Your Role:
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select></label
+          >
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
+    </div>
     <LatestArticle :postsContent="postsContent" :isDark="true" />
     <Subscribe />
     <Footer :footerContent="footerContent" />
@@ -45,21 +70,20 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
       const navigation = await api.getSingle("navigation");
       const footer = await api.getSingle("footer");
-      const homepage = await api.getSingle("home_page");
+      // const homepage = await api.getSingle("home_page");
       const posts = await api.query(
         Prismic.Predicates.at("document.type", "post")
       );
 
       let navigationContent = navigation.data;
       let footerContent = footer.data;
-      let homepageContent = homepage.data;
+      // let homepageContent = homepage.data;
       let postsContent = posts;
-      console.log(homepageContent);
 
       return {
         navigationContent,
         footerContent,
-        homepageContent,
+        // homepageContent,
         postsContent
       };
     } catch (e) {
