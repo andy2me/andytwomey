@@ -44,7 +44,7 @@
       class="flex flex-col-reverse items-start max-w-2xl pt-24 mx-auto md:flex-row md:justify-between"
     >
       <img
-        class=""
+        class="md:max-w-"
         src="https://www.andytwomey.com/hs-fs/hubfs/Andy-Author-1.png"
         alt="andy twomey"
       />
