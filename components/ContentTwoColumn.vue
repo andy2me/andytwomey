@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="py-6 bg-gray-100">
+    <div class="py-6 bg-white">
       <div class="section-container">
         <div class="flex flex-col justify-start align-start md:flex-row">
           <div class="md:max-w-2/3">

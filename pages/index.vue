@@ -2,15 +2,15 @@
   <div>
     <Navigation :navigationContent="navigationContent" />
     <Hero
-      before-text="Hey, I'm Andy."
-      title='I help Software businesses build <span class="highlight">smarter marketing engines</span>.'
+      :before-text="homepageContent.before_text[0].text"
+      :title="homepageContent.hero_title[0].text"
       :content="false"
       :squiggle="true"
-      img-src="https://www.andytwomey.com/hs-fs/hubfs/Andy-the-hero.jpg"
-      img-alt="Andy the hero"
+      :img-src="homepageContent.hero_image.url"
+      :img-alt="homepageContent.hero_image.alt"
       :scroll-down="true"
     />
-    <div class="py-12 bg-gray-100" />
+    <div class="py-12 bg-white" />
     <ContentTwoColumn />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
     <Subscribe />
@@ -45,17 +45,21 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
       const navigation = await api.getSingle("navigation");
       const footer = await api.getSingle("footer");
+      const homepage = await api.getSingle("home_page");
       const posts = await api.query(
         Prismic.Predicates.at("document.type", "post")
       );
 
       let navigationContent = navigation.data;
       let footerContent = footer.data;
+      let homepageContent = homepage.data;
       let postsContent = posts;
+      console.log(homepageContent);
 
       return {
         navigationContent,
         footerContent,
+        homepageContent,
         postsContent
       };
     } catch (e) {
