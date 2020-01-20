@@ -22,6 +22,7 @@
     "prismic-vue": "git+https://github.com/prismicio/prismic-vue.git#nuxt"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/tailwindcss": "^1.3.0",
     "nuxt-purgecss": "^0.2.1",
     "postcss-loader": "^3.0.0"

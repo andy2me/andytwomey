@@ -37,7 +37,7 @@
           class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
           placeholder="Mobile phone number"
           type="text"
-          name="mobilenumber"
+          name="mobilephone"
         />
         <input
           required
@@ -123,54 +123,55 @@ export default {
       let contactFormData = {
         firstname: contactForm.querySelector('input[name="firstname"]').value,
         lastname: contactForm.querySelector('input[name="lastname"]').value,
-        mobilenumber: contactForm.querySelector('input[name="mobilenumber"]')
+        mobilephone: contactForm.querySelector('input[name="mobilephone"]')
           .value,
         company: contactForm.querySelector('input[name="company"]').value,
         email: contactForm.querySelector('input[name="email"]').value
       };
       this.postData(contactFormData);
     },
+    // prettier-ignore
     postData(contactFormData) {
       const xhr = new XMLHttpRequest();
       const url =
         "https://api.hsforms.com/submissions/v3/integration/submit/416563/8d791780-b3ba-4109-b471-80fcb17320d5";
       let submitData = {
-        fields: [
+        "fields": [
           {
-            name: "firstname",
-            value: contactFormData.firstname
+            "name": "firstname",
+            "value": contactFormData.firstname
           },
           {
-            name: "lastname",
-            value: contactFormData.lastname
+            "name": "lastname",
+            "value": contactFormData.lastname
           },
           {
-            name: "mobilephone",
-            value: contactFormData.mobilenumber
+            "name": "mobilephone",
+            "value": contactFormData.mobilephone
           },
           {
-            name: "companyname",
-            value: contactFormData.company
+            "name": "companyname",
+            "value": contactFormData.company
           },
           {
-            name: "email",
-            value: contactFormData.email
+            "name": "email",
+            "value": contactFormData.email
           }
         ],
-        context: {
-          pageUri: "www.andytwomey.com/contact",
-          pageName: "Hire Me"
+        "context": {
+          "pageUri": "www.andytwomey.com/contact",
+          "pageName": "Hire Me"
         },
-        legalConsentOptions: {
-          consent: {
-            consentToProcess: true,
-            text:
+        "legalConsentOptions": {
+          "consent": {
+            "consentToProcess": true,
+            "text":
               "I agree to allow Andy Twomey to store and process my personal data.",
-            communications: [
+            "communications": [
               {
-                value: true,
-                subscriptionTypeId: 999,
-                text:
+                "value": true,
+                "subscriptionTypeId": 999,
+                "text":
                   "I agree to receive marketing communications from Andy Twomey."
               }
             ]
@@ -178,7 +179,7 @@ export default {
         }
       };
       const final_data = JSON.stringify(submitData);
-
+console.log(final_data)
       xhr.open("POST", url);
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.onreadystatechange = () => {

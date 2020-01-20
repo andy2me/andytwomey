@@ -70,7 +70,13 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     "@nuxtjs/axios",
-    "@nuxtjs/tailwindcss"
+    "@nuxtjs/tailwindcss",
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-50142892-1"
+      }
+    ]
   ],
   purgeCSS: {
     whitelist: ["squiggle"],
