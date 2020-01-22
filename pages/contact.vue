@@ -84,6 +84,21 @@ export default {
   },
   head: {
     title: "Hire Andy Twomey"
+  },
+  async asyncData({ context, error, req }) {
+    try {
+      const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
+      const navigation = await api.getSingle("navigation");
+      const footer = await api.getSingle("footer");
+      let navigationContent = navigation.data;
+      let footerContent = footer.data;
+      return {
+        navigationContent,
+        footerContent
+      };
+    } catch (e) {
+      error(e);
+    }
   }
 };
 </script>

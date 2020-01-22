@@ -26,7 +26,7 @@
               :src="article.data.header_image.url"
               :alt="article.data.header_image.alt"
             />
-            <div class="w-full p-4 bg-white md:w-1/2">
+            <div class="flex flex-col w-full p-8 md:w-1/2">
               <nuxt-link :to="'/post/' + article.uid">
                 <h4
                   class="text-xl font-bold text-gray-800 xs:text-2xl md:text-xl"
@@ -41,7 +41,7 @@
                 {{ article.data.foreword[0].text }}
               </p>
 
-              <div class="relative">
+              <div class="relative mt-auto">
                 <nuxt-link class="mt-5 cta" :to="'/post/' + article.uid">
                   Read more
                 </nuxt-link>

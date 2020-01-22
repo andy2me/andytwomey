@@ -22,12 +22,20 @@
           Read on
         </a>
 
-        <div class="mt-4">
-          <p
-            class="text-sm font-extrabold tracking-wider text-gray-600 uppercase"
-          >
-            {{ formattedDate }}
-          </p>
+        <div class="flex items-center mt-4">
+          <img
+            class="md:w-16"
+            src="https://cdn2.hubspot.net/hubfs/416563/Andy-Author-1.png"
+            alt="andy twomey"
+          />
+          <div>
+            <span class="font-bold text-gray-800">Andy Twomey</span>
+            <p
+              class="text-sm font-extrabold tracking-wider text-gray-600 uppercase"
+            >
+              {{ formattedDate }}
+            </p>
+          </div>
         </div>
       </div>
       <img class="w-full md:w-1/2 md:ml-2" :src="image.url" :alt="image.alt" />
@@ -40,10 +48,12 @@
       </div>
     </div>
 
-    <div class="flex flex-col items-start max-w-2xl pt-24 mx-auto md:flex-row">
+    <div
+      class="flex flex-col items-start max-w-2xl pt-12 mx-auto mt-24 border-t-2 border-gray-500 border-solid md:flex-row"
+    >
       <img
         class="md:w-24"
-        src="https://www.andytwomey.com/hs-fs/hubfs/Andy-Author-1.png"
+        src="https://cdn2.hubspot.net/hubfs/416563/Andy-Author-1.png"
         alt="andy twomey"
       />
       <div class="pb-24 md:ml-12">
@@ -80,7 +90,7 @@ export default {
   },
   head() {
     return {
-      title: "Prismic Nuxt.js Blog"
+      title: "Andy Twomey Blog"
     };
   },
   async asyncData({ params, error, req }) {
