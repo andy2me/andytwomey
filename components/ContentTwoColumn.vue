@@ -67,16 +67,14 @@
           </div>
 
           <div
-            class="pt-10 mt-8 border-white border-solid md:max-w-1/3 md:w-full md:mt-0 md:pt-0 md:ml-4"
+            class="pt-10 mt-8 border-white border-solid md:max-w-1/3 md:w-full md:mt-0 md:pt-0 md:ml-4 md:pl-16"
           >
             <img
               src="https://www.andytwomey.com/hs-fs/hubfs/testimonial.png?width=60&height=60&name=testimonial.png"
               alt="Mark Dwyer"
             />
             <div class="mt-8">
-              <p
-                class="text-sm tracking-wide text-white sm:text-base md:text-xl "
-              >
+              <p class="text-sm tracking-wide text-white">
                 “I've worked with Andy on multiple projects and campaigns.
                 Andy's always brought a fresh perspective to my teams and truly
                 understands the forces faced by a SaaS business"

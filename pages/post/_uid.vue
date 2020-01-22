@@ -40,14 +40,21 @@
       </div>
     </div>
 
-    <div
-      class="flex flex-col-reverse items-start max-w-2xl pt-24 mx-auto md:flex-row md:justify-between"
-    >
+    <div class="flex flex-col items-start max-w-2xl pt-24 mx-auto md:flex-row">
       <img
-        class="md:max-w-"
+        class="md:w-24"
         src="https://www.andytwomey.com/hs-fs/hubfs/Andy-Author-1.png"
         alt="andy twomey"
       />
+      <div class="pb-24 md:ml-12">
+        <span class="block text-xl font-bold text-gray-800">Andy</span>
+        <span class="block leading-relaxed tracking-wide">
+          Andy enjoys helping businesses create meaningful marketing. From
+          strategy to technology, it's all in the detail. When not rambling
+          about marketing funnels, you'll find Andy running proudly after his
+          two boys.
+        </span>
+      </div>
     </div>
 
     <Subscribe />
