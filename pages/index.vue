@@ -6,13 +6,11 @@
       title='I help Software businesses build <span class="highlight">smarter marketing engines</span>.'
       :content="false"
       :squiggle="true"
-      img-src="https://www.andytwomey.com/hs-fs/hubfs/Andy-the-hero.jpg"
+      img-src="https://cdn2.hubspot.net/hubfs/416563/Andy-the-hero.jpg"
       img-alt="Andy the hero"
       :scroll-down="true"
     />
-    <div class="py-12 bg-white">
-      <div class="border-up" />
-    </div>
+    <div class="py-12 bg-white"></div>
     <ContentTwoColumn />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
     <Subscribe />

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="py-6 bg-white">
-      <div class="section-container">
+      <div class="relative section-container border-up">
         <div class="flex flex-col justify-start align-start md:flex-row">
           <div class="md:max-w-2/3">
             <h2 class="text-4xl font-bold tracking-wide text-gray-900">
@@ -118,6 +118,14 @@
 </template>
 
 <style lang="postcss" scoped>
+.border-up::before {
+  right: 360px;
+  height: 200%;
+  top: -75%;
+  width: 1px;
+  content: " ";
+  @apply bg-primary absolute;
+}
 .squiggle {
   @apply mt-12 mb-6;
 }

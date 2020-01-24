@@ -65,7 +65,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 .hero-image {
   @apply absolute hidden;
   @screen xs {
