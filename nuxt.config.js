@@ -85,7 +85,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [["@nuxtjs/google-tag-manager", { id: "GTM-XXXXXXX" }]],
   /*
    ** Build configuration
    */

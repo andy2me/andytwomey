@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.2",
+    "@nuxtjs/google-tag-manager": "^2.3.1",
     "nuxt": "^2.11.0",
     "postcss-easings": "^2.0.0",
     "postcss-for": "^2.1.1",

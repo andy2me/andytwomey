@@ -10,7 +10,9 @@
       img-alt="Andy the hero"
       :scroll-down="true"
     />
-    <div class="py-12 bg-white" />
+    <div class="py-12 bg-white">
+      <div class="border-up" />
+    </div>
     <ContentTwoColumn />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
     <Subscribe />

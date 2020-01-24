@@ -1,8 +1,8 @@
 <template>
-  <div class="relative">
+  <div class="">
     <div class="overflow-hidden">
       <div
-        class="relative z-10 flex flex-col section-container sm:pt-8 lg:mt-12 lg:pt-12"
+        class="z-10 flex flex-col section-container sm:pt-8 lg:mt-12 lg:pt-12"
       >
         <div class="w-full py-10 lg:pb-32">
           <span

@@ -70,7 +70,7 @@
             class="pt-10 mt-8 border-white border-solid md:max-w-1/3 md:w-full md:mt-0 md:pt-0 md:ml-4 md:pl-16"
           >
             <img
-              src="https://www.andytwomey.com/hs-fs/hubfs/testimonial.png?width=60&height=60&name=testimonial.png"
+              src="https://cdn2.hubspot.net/hubfs/416563/testimonial.png?width=60&height=60&name=testimonial.png"
               alt="Mark Dwyer"
             />
             <div class="mt-8">
@@ -153,34 +153,43 @@ export default {
     return {
       companies: [
         {
-          src: "https://www.andytwomey.com/hubfs/clinic-to-cloud.svg",
+          src: "https://cdn2.hubspot.net/hubfs/416563/clinic-to-cloud.svg",
           alt: "Clinic to Cloud"
         },
-        { src: "https://www.andytwomey.com/hubfs/weploy.svg", alt: "weploy" },
+        {
+          src: "https://cdn2.hubspot.net/hubfs/416563/weploy.svg",
+          alt: "weploy"
+        },
         {
           src:
-            "https://www.andytwomey.com/hs-fs/hubfs/zeetings.png?width=116&height=31&name=zeetings.png",
+            "https://cdn2.hubspot.net/hubfs/416563/zeetings.png?width=116&height=31&name=zeetings.png",
           alt: "zeetings"
         },
-        { src: "https://www.andytwomey.com/hubfs/scrunch.svg", alt: "scrunch" },
-        { src: "https://www.andytwomey.com/hubfs/flarehr.svg", alt: "flare" },
+        {
+          src: "https://cdn2.hubspot.net/hubfs/416563/scrunch.svg",
+          alt: "scrunch"
+        },
+        {
+          src: "https://cdn2.hubspot.net/hubfs/416563/flarehr.svg",
+          alt: "flare"
+        },
         {
           src:
-            "https://www.andytwomey.com/hs-fs/hubfs/workflowmax.png?width=139&height=41&name=workflowmax.png",
+            "https://cdn2.hubspot.net/hubfs/416563/workflowmax.png?width=139&height=41&name=workflowmax.png",
           alt: "Workflow Max"
         }
       ],
       logos: [
         {
-          src: "https://www.andytwomey.com/hs-fs/hubfs/you&co-logo.png",
+          src: "https://cdn2.hubspot.net/hubfs/416563/you&co-logo.png",
           alt: "You and Co"
         },
         {
-          src: "https://www.andytwomey.com/hs-fs/hubfs/focus-logo.png",
+          src: "https://cdn2.hubspot.net/hubfs/416563/focus-logo.png",
           alt: "Focus"
         },
         {
-          src: "https://www.andytwomey.com/hs-fs/hubfs/botsbyco.png",
+          src: "https://cdn2.hubspot.net/hubfs/416563/botsbyco.png",
           alt: "Bots by Co"
         }
       ],
