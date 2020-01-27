@@ -17,7 +17,7 @@
               otherwise building my own SaaS product,
               <a class="inline-link" href="#">Focus App</a>.
             </p>
-            <a class="mt-10 cta cta-lg lg:mt-16" href="#">
+            <a class="mt-10 cta cta-lg lg:mt-16" href="#excite">
               What excites me
             </a>
           </div>
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="py-6 bg-primary">
+    <div class="py-6 bg-primary" id="excite">
       <div class="section-container">
         <svg
           class="squiggle"
