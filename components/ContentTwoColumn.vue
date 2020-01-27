@@ -2,7 +2,7 @@
   <div>
     <div class="py-6 bg-white">
       <div class="relative section-container border-up">
-        <div class="flex flex-col justify-start align-start md:flex-row">
+        <div class="flex flex-col justify-start pb-12 align-start md:flex-row">
           <div class="md:max-w-2/3">
             <h2 class="text-4xl font-bold tracking-wide text-gray-900">
               Who is <span class="highlight">Andy</span>?
@@ -34,7 +34,7 @@
     </div>
 
     <div class="py-6 bg-primary" id="excite">
-      <div class="section-container">
+      <div class="relative section-container border-up border-up--white">
         <svg
           class="squiggle"
           width="46"
@@ -124,7 +124,17 @@
   top: -75%;
   width: 1px;
   content: " ";
-  @apply bg-primary absolute;
+  @apply hidden bg-primary absolute;
+  @screen lg {
+    @apply block;
+  }
+}
+
+.border-up--white::before {
+  top: -12%;
+  height: 75%;
+
+  @apply bg-white;
 }
 .squiggle {
   @apply mt-12 mb-6;
@@ -195,10 +205,6 @@ export default {
         {
           src: "https://cdn2.hubspot.net/hubfs/416563/focus-logo.png",
           alt: "Focus"
-        },
-        {
-          src: "https://cdn2.hubspot.net/hubfs/416563/botsbyco.png",
-          alt: "Bots by Co"
         }
       ],
       sections: [

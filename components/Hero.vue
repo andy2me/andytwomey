@@ -11,7 +11,7 @@
 
         <h1
           v-html="title"
-          class="mt-6 text-3xl font-bold leading-none tracking-wide text-gray-800 xs:max-w-xs sm:max-w-md md:mt-12 md:text-5xl lg:max-w-4xl lg:text-6xl"
+          class="mt-6 text-3xl font-bold leading-none tracking-wide text-gray-800 xs:max-w-xs sm:max-w-md md:mt-12 md:text-5xl lg:max-w-3xl lg:text-6xl"
         ></h1>
 
         <p
