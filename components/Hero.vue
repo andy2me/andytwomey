@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-    <div class="relative section-container sm:pt-8 lg:mt-12 lg:pt-12 border-up">
+    <div class="relative section-container sm:pt-8 lg:mt-12 lg:pt-12 ">
       <img v-if="imgSrc" class="z-0 hero-image" :src="imgSrc" :alt="imgAlt" />
       <div class="relative w-full py-10 lg:pb-32">
         <span
