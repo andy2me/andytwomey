@@ -58,7 +58,7 @@
           type="email"
           name="email"
         />
-        <button class="mx-auto mt-6 cta" type="submit">Lets chat</button>
+        <button class="mx-auto mt-6 cta" type="submit">Let's chat</button>
       </form>
     </section>
     <Footer :footerContent="footerContent" />

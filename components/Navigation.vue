@@ -25,16 +25,19 @@
           :key="link.id"
           :class="'xs:ml-5 sm:ml-10 stagger-' + (index + 2)"
         >
-          <a v-if="link.type === 'Link'" :href="link.href[0].text" class="link"
+          <nuxt-link
+            v-if="link.type === 'Link'"
+            :to="link.href[0].text"
+            class="link"
             >{{ link.text[0].text }}
-          </a>
-          <a
+          </nuxt-link>
+          <nuxt-link
             v-if="link.type === 'Button'"
-            :href="link.href[0].text"
+            :to="link.href[0].text"
             class="cta"
           >
             {{ link.text[0].text }}
-          </a>
+          </nuxt-link>
         </li>
         <!-- <li v-for="menuLink in menuLinks" :key="menuLink.id">
         <prismic-link :field="menuLink.link">{{ $prismic.richTextAsPlain(menuLink.label) }}</prismic-link>

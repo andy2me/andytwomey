@@ -10,6 +10,18 @@
       img-alt="Andy the hero"
       :scroll-down="true"
     />
+    <!-- <Modal :showing="exampleModalShowing" @close="exampleModalShowing = false">
+      <h2 class="text-xl font-bold text-gray-900">Example modal</h2>
+      <p class="mb-6">
+        This is example text passed through to the modal via a slot.
+      </p>
+      <button
+        class="px-4 py-2 text-sm font-bold tracking-wide text-white uppercase bg-blue-600 rounded-lg"
+        @click="exampleModalShowing = false"
+      >
+        Close
+      </button>
+    </Modal> -->
     <div class="py-12 bg-white"></div>
     <ContentTwoColumn />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
@@ -24,6 +36,7 @@ import PrismicConfig from "~/prismic.config.js";
 import Navigation from "~/components/Navigation";
 import Footer from "~/components/Footer";
 import Hero from "~/components/Hero";
+import Modal from "~/components/Modal";
 import ContentTwoColumn from "~/components/ContentTwoColumn";
 import LatestArticle from "~/components/LatestArticle";
 import Subscribe from "~/components/Subscribe";
@@ -33,6 +46,7 @@ export default {
     Navigation,
     Footer,
     Hero,
+    Modal,
     ContentTwoColumn,
     LatestArticle,
     Subscribe
