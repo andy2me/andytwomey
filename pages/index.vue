@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div id="modalHoverArea" @mouseenter="showModal" />
     <Navigation :navigationContent="navigationContent" />
     <Hero
       before-text="Hey, I'm Andy."
@@ -10,18 +11,8 @@
       img-alt="Andy the hero"
       :scroll-down="true"
     />
-    <!-- <Modal :showing="exampleModalShowing" @close="exampleModalShowing = false">
-      <h2 class="text-xl font-bold text-gray-900">Example modal</h2>
-      <p class="mb-6">
-        This is example text passed through to the modal via a slot.
-      </p>
-      <button
-        class="px-4 py-2 text-sm font-bold tracking-wide text-white uppercase bg-blue-600 rounded-lg"
-        @click="exampleModalShowing = false"
-      >
-        Close
-      </button>
-    </Modal> -->
+
+    <Modal v-show="isModalVisible" @close="closeModal" />
     <div class="py-12 bg-white"></div>
     <ContentTwoColumn />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
@@ -54,6 +45,20 @@ export default {
   head: {
     title: "Andy Twomey – SaaS Marketing Nerd!"
   },
+  data() {
+    return {
+      isModalVisible: false
+    };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
+  },
+
   async asyncData({ context, error, req }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
@@ -81,3 +86,14 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss" scoped>
+#modalHoverArea {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+</style>

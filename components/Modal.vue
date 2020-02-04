@@ -1,56 +1,6 @@
-<template>
-  <transition name="modal">
-        <div
-      v-if="showing"
-      class="fixed inset-0 w-full h-screen flex items-center justify-center bg-semi-75"
-      @click.self="close"
-    >
-      <div class="relative w-full max-w-2xl bg-white shadow-lg rounded-lg p-8">
-        <button
-          aria-label="close"
-          class="absolute top-0 right-0 text-xl text-gray-500 my-2 mx-4"
-          @click.prevent="close"
-        >
-          ×
-        </button>
-        <slot />
-      </div>
-    </div>
-  </transition>
-</template>
-<style lang="postcss">
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-</style>
-
 <script>
 export default {
-  props: {
-    showing: {
-      required: true,
-      type: Boolean
-    }
-  },
-  watch: {
-    showing(value) {
-      if (value) {
-        return document.querySelector("body").classList.add("overflow-hidden");
-      }
-
-      document.querySelector("body").classList.remove("overflow-hidden");
-    }
-  },
+  name: "Modal",
   methods: {
     close() {
       this.$emit("close");
@@ -58,3 +8,201 @@ export default {
   }
 };
 </script>
+<template>
+  <div
+    class="fixed z-40 h-screen min-w-full font-bold text-center modal courier-new"
+  >
+    <div
+      class="absolute w-full max-w-3xl p-24 pt-32 bg-white border-4 border-black border-solid modal-inner"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalDescription"
+    >
+      <svg
+        class="absolute modal-coffee"
+        width="104"
+        height="132"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M79.214 31.606L68.147 119.65S52 124 43.47 124c-8.529 0-24.544-4.35-24.544-4.35L8.67 30.63 3 27.358V16.908l5.67-4.35V4.066S23.34 1 43.472 1c20.13 0 35.742 3.834 35.742 3.834v7.059L86 16.319l-1.105 11.038-5.681 4.25z"
+          fill="#fff"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M42.529 123.925c9.269-.325 23.999-4.117 23.999-4.117l.718-5.85s-16.691 2.527-24.117 3.214c-7.427.686-24.6-4.082-24.6-4.082l.79 5.671s17.594 5.361 23.21 5.164zM8.375 6.667v6.857s3.96 4.085 34.074 4.623c30.115.537 35.672-5.201 35.672-5.201l-.98-6.279s-21.533 3.84-36.048 3.197C26.577 9.222 8.375 6.667 8.375 6.667z"
+          fill="#5F00FF"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M2.818 17.786l-.479 9.921s4.503 6.356 39.83 5.863c43.544-.608 41.988-6.516 41.988-6.516l-.647-9.268s-25.763 6.508-42.79 5.782c-17.028-.727-37.902-5.782-37.902-5.782z"
+          fill="#5F00FF"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M20.425 117.915c2.88 1.192 11.572 4.349 22.776 4.349 11.035 0 19.194-2.398 22.072-3.38l10.926-89.12 1.692-.347c1.303-.176 3.012-1.54 4.166-2.525v-9.014l-6.035-3.756V7.239c-1.53-.77-8.12-3.017-32.99-3.017-24.325 0-31.188 1.736-32.988 2.456v7.5L4.2 18.368v8.949c.557.513 1.835 1.442 4.194 1.963l1.457.321 10.573 88.314zm22.776 8.572c-14.758 0-25.197-5.008-25.634-5.221l-1.033-.502L6.028 33.011c-3.956-1.256-5.502-3.46-5.68-3.735L0 28.747V16.192l5.843-4.19V5.362l.045-.213C6.18 3.74 6.955 0 43.032 0c36.14 0 36.907 4.472 37.16 5.942l.03.359v5.47l6.035 3.755V28.71l-.626.62c-.315.312-2.764 2.676-5.6 3.694L69.135 121.91l-1.136.469c-.405.168-10.107 4.108-24.797 4.108z"
+          fill="#000"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M10.284 5.48zm0 0l.001.003v-.002zm.001.004l.002.001-.002-.001zm30.808 5.647c-28.33 0-32.422-3.369-33.001-4.4a1.272 1.272 0 01.478-1.727 1.258 1.258 0 011.615.328c.335.29 4.428 3.266 30.908 3.266 28.87 0 36.411-3.405 36.484-3.439a1.266 1.266 0 011.1 2.28c-.307.15-7.839 3.692-37.584 3.692zM43.918 19.414c-28.201 0-35.895-4.619-36.21-4.816a1.27 1.27 0 01-.402-1.745 1.255 1.255 0 011.728-.409c.136.08 7.788 4.437 34.884 4.437 26.947 0 33.327-4.848 33.383-4.896a1.255 1.255 0 011.777.137 1.27 1.27 0 01-.136 1.786c-.262.225-6.716 5.506-35.024 5.506z"
+          fill="#000"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M43.655 24.14c-28.207 0-40.787-4.968-41.308-5.179a1.267 1.267 0 01-.697-1.647c.258-.649.99-.962 1.638-.703.124.05 12.73 4.996 40.367 4.996 27.6 0 39.237-4.933 39.352-4.982.638-.28 1.38.015 1.658.655a1.268 1.268 0 01-.65 1.666c-.482.212-12.134 5.194-40.36 5.194zM42.735 34.817c-20.3 0-33.994-2.66-34.198-2.701a1.267 1.267 0 01-.991-1.488 1.257 1.257 0 011.482-.998c.302.062 30.676 5.95 68.08-.008a1.262 1.262 0 011.441 1.053c.11.69-.36 1.34-1.048 1.45-12.672 2.018-24.556 2.692-34.766 2.692zM42.078 118.227c-13.854 0-24.057-4.444-24.486-4.635a1.27 1.27 0 01-.646-1.669 1.259 1.259 0 011.66-.649c.102.044 10.175 4.42 23.48 4.42l.248-.001c12.604-.052 24.075-3.641 25.343-4.05l1.187-.384.826 2.365-1.217.423c-.028.009-.055.019-.083.026-1.678.537-13.3 4.101-26.047 4.154h-.265zM56.004 44.02c2.253 0 4.08.703 5.433 2.091 2.344 2.407 2.297 5.985 2.294 6.136-.014.699-.552 1.264-1.286 1.24a1.265 1.265 0 01-1.234-1.289c.001-.049.01-2.7-1.585-4.325-.86-.876-2.08-1.32-3.622-1.32-5.333 0-5.582 5.478-5.59 5.711-.024.7-.633 1.253-1.303 1.222a1.263 1.263 0 01-1.215-1.31c.096-2.82 1.916-8.157 8.108-8.157zM29.321 44.02c2.252 0 4.08.703 5.432 2.091 2.344 2.405 2.297 5.985 2.295 6.136-.015.699-.556 1.264-1.286 1.24a1.265 1.265 0 01-1.235-1.288c.001-.027.017-2.694-1.586-4.326-.859-.876-2.077-1.32-3.62-1.32-5.201 0-5.567 5.13-5.59 5.716-.03.697-.635 1.248-1.309 1.215a1.263 1.263 0 01-1.21-1.307c.097-2.822 1.918-8.157 8.11-8.157zM31.762 75.299c-.134 5.784-1.494 9.789-1.494 9.789s6.05 6.16 17.004 3.814c10.953-2.344 9.354-16.264 9.354-16.264s-.946-3.235-3.405-5.69c-4.103-4.094-12.217-6.981-22.15-.886 0 0 .826 3.453.691 9.237z"
+          fill="#000"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M46.809 84.947c-.268-.053-1.152-.333-1.505.552 0 0 .074-.748-.671-.957-4.11-.588-10.12-.738-12.218-.587-1.291.093-1.127 2.264-1.097 2.728.045.698 1.358 1.019 3.015 1.505 4.485 1.316 11.27.783 14.117-1.704.736-.643-.065-1.15-1.642-1.537z"
+          fill="#fff"
+        />
+        <path
+          opacity=".201"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M45.226 82.283c.22.118.998 5.647-2.57 6.597-1.279.341 7.382-2.019 7.382-2.019l-.769-2.409-4.043-2.169z"
+          fill="#000"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M32.489 63.953s-.824 3.722 1.934 4.256c.84.163 2.505.293 3.311.354 1.06.08 1.918.102 2.603-.174.69-.277.663-1.066.814-1.7.041.455-.03 1.884 1.553 2.023 1.09.096 2.128-.005 2.94-.043 1.8-.085 3.077-.529 4.217-1.573.228-.208.433-.43.595-.658.864-1.22-3.569-3.507-8.53-4.264-4.96-.757-9.437 1.779-9.437 1.779z"
+          fill="#fff"
+        />
+        <path
+          opacity=".201"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M46.008 62.643s1.133 4.418-1.273 6.579c0 0 7.16 1.056 6.706-3.296 0 0-3.074-3.076-5.433-3.283z"
+          fill="#000"
+        />
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M43.44 90.206c-.413.036-.836.06-1.273.073-10.532.307-13.996-5.1-14.137-5.33a1.27 1.27 0 01.405-1.745 1.259 1.259 0 011.736.41c.11.169 2.944 4.395 11.922 4.134 11.088-.32 12.85-9.448 12.919-9.837.104-.463 2.123-9.856-8.376-13.13-11.377-3.549-17.834 4.648-17.898 4.731a1.255 1.255 0 01-1.768.228 1.27 1.27 0 01-.227-1.776c.074-.098 7.606-9.663 20.639-5.602 10.224 3.189 11.075 11.903 10.098 16.065-.005.04-2.005 10.725-14.04 11.78zM30.64 6.22c0 .341-1.913.617-4.273.617-2.359 0-4.271-.276-4.271-.616 0-.34 1.912-.617 4.271-.617 2.36 0 4.272.276 4.272.617z"
+          fill="#000"
+        />
+        <path
+          opacity=".1"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M61.631 120.872l9.857-89.213 6.633-.318-11.57 87.954-4.92 1.577zM78.121 19.455l-.264 11.418 7.185-3.168V16.727l-6.514-3.997-.407-6.43-6.495 1.641-.044 7.606 6.54 3.908z"
+          fill="#000"
+        />
+        <path
+          opacity=".1"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M17.327 118.674c-5.814 2.965-4.129 5.422-3.37 6.438.758 1.016 4.55 5.082 34.293 5.471 29.745.389 51.316-10.13 51.316-10.13s7.414-3.219 1.432-7.369c-5.982-4.15-30.857-3.662-30.857-3.662l-2.137 11.004-23.998 3.949-22.969-3.503-3.71-2.198z"
+          fill="#000"
+        />
+      </svg>
+      <button
+        type="button"
+        class="absolute top-0 bg-black close-modal"
+        @click="close"
+        aria-label="Close modal"
+      >
+        <svg
+          width="29"
+          height="29"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21.213 21.213L7.071 7.071M21.213 7.071L7.071 21.213"
+            stroke="#fff"
+            stroke-width="3"
+          />
+        </svg>
+      </button>
+      <span class="text-xl">
+        Receive 1x email per week that includes a problem and solution towards
+        scaling growth.
+      </span>
+      <img
+        class="block mx-auto mt-8"
+        src="https://cdn2.hubspot.net/hubfs/416563/AT/squiggle.svg"
+        alt="squiggle"
+      />
+      <form
+        class="flex max-w-md mx-auto mt-8 barlow"
+        name="contact"
+        method="POST"
+        data-netlify="true"
+      >
+        <div class="relative w-full label-floating">
+          <input
+            required
+            class="block w-full px-5 py-3 border-4 border-black border-solid"
+            type="email"
+            name="subscribeEmail"
+            id="subscribeEmail"
+            placeholder="Email address"
+          />
+
+          <label class="absolute" for="subscribeEmail">
+            Email address
+          </label>
+        </div>
+        <button
+          class="block border-4 border-black border-solid cta cta-black"
+          type="submit"
+        >
+          Include me
+        </button>
+      </form>
+      <button
+        type="button"
+        class="mt-12 font-bold border-b-2 border-black border-solid"
+        @click="close"
+        aria-label="Close modal"
+      >
+        No thanks, I don't like awesome stuff!
+      </button>
+    </div>
+  </div>
+</template>
+<style lang="postcss" scoped>
+.modal {
+  animation: fade-modal 1s ease;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.modal-inner {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-coffee {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close-modal {
+  top: -4px;
+  right: -2rem;
+}
+
+@keyframes modal-fade {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>

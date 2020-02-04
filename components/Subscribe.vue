@@ -16,7 +16,7 @@
 
       <form
         class="flex max-w-md mx-auto"
-        name="contact"
+        name="subscribe"
         method="POST"
         data-netlify="true"
       >
@@ -27,6 +27,7 @@
           name="subscribeEmail"
           placeholder="Email address"
         />
+
         <button class="block cta" type="submit">Include me</button>
       </form>
     </div>
