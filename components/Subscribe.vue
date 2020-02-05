@@ -20,13 +20,19 @@
         method="POST"
         data-netlify="true"
       >
-        <input
-          required
-          class="block w-full px-5 py-3"
-          type="email"
-          name="subscribeEmail"
-          placeholder="Email address"
-        />
+        <div class="relative w-full label-floating">
+          <input
+            required
+            class="block w-full px-5 py-3 border-4 border-white border-solid"
+            type="email"
+            name="subscribeEmail"
+            id="subscribeEmail"
+            placeholder="Email address"
+          />
+          <label class="absolute" for="subscribeEmail">
+            Email
+          </label>
+        </div>
 
         <button class="block cta" type="submit">Include me</button>
       </form>

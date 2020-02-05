@@ -25,39 +25,77 @@
         method="POST"
         data-netlify="true"
       >
-        <input
-          required
-          class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
-          placeholder="First name"
-          type="text"
-          name="firstname"
-        />
-        <input
-          class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
-          placeholder="Last name"
-          type="text"
-          name="lastname"
-        />
-        <input
-          class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
-          placeholder="Mobile phone number"
-          type="text"
-          name="mobilephone"
-        />
-        <input
-          required
-          class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
-          placeholder="Company name"
-          type="text"
-          name="company"
-        />
-        <input
-          required
-          class="block w-full p-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
-          placeholder="Email"
-          type="email"
-          name="email"
-        />
+        <div class="relative w-full label-floating">
+          <input
+            required
+            class="block w-full px-5 py-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
+            placeholder="First name"
+            type="text"
+            name="firstname"
+            id="firstname"
+          />
+
+          <label class="absolute" for="firstname">
+            First Name
+          </label>
+        </div>
+
+        <div class="relative w-full label-floating">
+          <input
+            class="block w-full px-5 py-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
+            placeholder="Last name"
+            type="text"
+            name="lastname"
+            id="lastname"
+          />
+
+          <label class="absolute" for="lastname">
+            Last name
+          </label>
+        </div>
+
+        <div class="relative w-full label-floating">
+          <input
+            class="block w-full px-5 py-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
+            placeholder="Mobile phone number"
+            type="text"
+            name="mobilephone"
+            id="mobilephone"
+          />
+
+          <label class="absolute" for="mobilephone">
+            Mobile Number
+          </label>
+        </div>
+
+        <div class="relative w-full label-floating">
+          <input
+            required
+            class="block w-full px-5 py-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
+            placeholder="Company name"
+            type="text"
+            name="company"
+            id="company"
+          />
+          <label class="absolute" for="company">
+            Company Name
+          </label>
+        </div>
+
+        <div class="relative w-full label-floating">
+          <input
+            required
+            class="block w-full px-5 py-3 mt-4 font-medium placeholder-gray-600 border-4 border-gray-900"
+            placeholder="Email"
+            type="email"
+            name="email"
+            id="email"
+          />
+          <label class="absolute" for="email">
+            Email
+          </label>
+        </div>
+
         <button class="mx-auto mt-6 cta" type="submit">Let's chat</button>
       </form>
     </section>
