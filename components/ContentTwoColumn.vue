@@ -4,10 +4,26 @@
       <div class="relative section-container border-up">
         <div class="flex flex-col justify-start pb-12 align-start md:flex-row">
           <div class="md:max-w-2/3">
-            <h2 class="text-4xl font-bold tracking-wide text-gray-900">
-              Who is <span class="highlight">Andy</span>?
+            <h2
+              v-if="content.two_column_title[0].text"
+              class="text-4xl font-bold tracking-wide text-gray-900"
+            >
+              {{ content.two_column_title[0].text }}
             </h2>
+
+            <h2 v-else class="text-4xl font-bold tracking-wide text-gray-900">
+              Who is <span class="highlight">Andy?</span>
+            </h2>
+
             <p
+              v-if="content.two_column_content[0].text"
+              class="mt-4 text-xl font-medium leading-normal tracking-wide text-gray-700 md:text-2xl"
+            >
+              {{ content.two_column_content[0].text }}
+            </p>
+
+            <p
+              v-else
               class="mt-4 text-xl font-medium leading-normal tracking-wide text-gray-700 md:text-2xl"
             >
               You'll find me helping Founders, Marketers and Sales folk of
@@ -17,6 +33,7 @@
               otherwise building my own SaaS product,
               <a class="inline-link" href="#">Focus App</a>.
             </p>
+
             <a class="mt-10 cta cta-lg lg:mt-16" href="#excite">
               What excites me
             </a>
@@ -52,10 +69,26 @@
         </svg>
         <div class="flex flex-col justify-start align-start md:flex-row">
           <div class="md:max-w-2/3">
-            <h2 class="text-4xl font-bold tracking-wide text-white">
+            <h2
+              v-if="content.two_column_title_variant[0].text"
+              class="text-4xl font-bold tracking-wide text-white"
+            >
+              {{ content.two_column_title_variant[0].text }}
+            </h2>
+
+            <h2 v-else class="text-4xl font-bold tracking-wide text-white">
               What excites me
             </h2>
+
             <p
+              v-if="content.two_column_content_variant[0].text"
+              class="mt-4 text-xl font-medium leading-normal tracking-wide text-white md:text-2xl"
+            >
+              {{ content.two_column_content_variant[0].text }}
+            </p>
+
+            <p
+              v-else
               class="mt-4 text-xl font-medium leading-normal tracking-wide text-white md:text-2xl"
             >
               Sharing stories, challenges, learnings and wins with those
@@ -74,17 +107,40 @@
               alt="Mark Dwyer"
             />
             <div class="mt-8">
-              <p class="text-sm tracking-wide text-white">
+              <p
+                v-if="content.testimonial[0].text"
+                class="text-sm tracking-wide text-white"
+              >
+                {{ content.testimonial[0].text }}
+              </p>
+
+              <p v-else class="text-sm tracking-wide text-white">
                 “I've worked with Andy on multiple projects and campaigns.
                 Andy's always brought a fresh perspective to my teams and truly
                 understands the forces faced by a SaaS business"
               </p>
-              <span class="inline-block mt-8 font-bold text-white"
-                >Mark Dwyer</span
+
+              <span
+                v-if="content.testimonial_name[0].text"
+                class="inline-block mt-8 font-bold text-white"
               >
-              <span class="inline-block font-medium text-white sm:block"
-                >Chief Executive Officer at Medify Technologies</span
+                {{ content.testimonial_name[0].text }}
+              </span>
+
+              <span v-else class="inline-block mt-8 font-bold text-white">
+                Mark Dwyer
+              </span>
+
+              <span
+                v-if="content.testimonial_role[0].text"
+                class="inline-block font-medium text-white sm:block"
               >
+                Chief Executive Officer at Medify Technologies
+              </span>
+
+              <span v-else class="inline-block font-medium text-white sm:block">
+                Chief Executive Officer at Medify Technologies
+              </span>
             </div>
           </div>
         </div>
@@ -167,6 +223,7 @@
 
 <script>
 export default {
+  props: ["content"],
   data() {
     return {
       companies: [

@@ -14,7 +14,7 @@
 
     <Modal v-show="isModalVisible" @close="closeModal" />
     <div class="py-12 bg-white"></div>
-    <ContentTwoColumn />
+    <ContentTwoColumn :content="homepageContent" />
     <LatestArticle :postsContent="postsContent" :isDark="true" />
     <Subscribe />
     <Footer :footerContent="footerContent" />
@@ -64,20 +64,22 @@ export default {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
       const navigation = await api.getSingle("navigation");
       const footer = await api.getSingle("footer");
-      // const homepage = await api.getSingle("home_page");
+      const homepage = await api.getSingle("home_page");
       const posts = await api.query(
         Prismic.Predicates.at("document.type", "post")
       );
 
       let navigationContent = navigation.data;
       let footerContent = footer.data;
-      // let homepageContent = homepage.data;
+      let homepageContent = homepage.data;
       let postsContent = posts;
+
+      // console.log(homepagContent);
 
       return {
         navigationContent,
         footerContent,
-        // homepageContent,
+        homepageContent,
         postsContent
       };
     } catch (e) {
