@@ -138,10 +138,12 @@ export default {
       />
       <form
         class="flex max-w-md mx-auto mt-8 barlow"
-        name="contact"
+        name="subscribe"
         method="POST"
+        action="/submission/subscribe"
         data-netlify="true"
       >
+        <input type="hidden" name="form-name" value="subscribe" />
         <div class="relative w-full label-floating">
           <input
             required
