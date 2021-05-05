@@ -190,7 +190,7 @@ export const HomeScreen = () => {
           </Body>
         </ContentContainer>
         <FooterContainer layout={{ '@initial': 'portrait', '@bp1': 'landscape' }}>
-          <Button as="a" href="https://andytwomey.substack.com/" title="Andy Twomey's Substack Blog">Read my mutterings.</Button>
+          <Button as="a" href="https://blog.andytwomey.com/" title="Andy Twomey's Blog">Read my mutterings.</Button>
         </FooterContainer>
       </Root>
       </LazyMotion>
