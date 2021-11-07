@@ -184,7 +184,7 @@ export const HomeScreen = () => {
 
             <Paragraph css={{ marginBottom: '$3' }}>Hi, I’m Andy.</Paragraph>
             <Heading css={{ marginBottom: '$5' }}>Helping Marketers is my schtick!</Heading>
-            <Paragraph css={{ marginBottom: '$3' }}>Actively creating <Link href="https://blog.andytwomey.com" title="Focus by Andy">Focus by Andy</Link> to help teams plan and execute their work better.
+            <Paragraph css={{ marginBottom: '$3' }}>Actively creating <Link href="https://blog.andytwomey.com" title="Focus">Focus</Link> to help teams plan and execute their work better.
               Director at <Link href="https://yandc.com.au/" title="Y&C Agency">Y&C</Link>, SaaS Growth Agency.</Paragraph>
             <Paragraph css={{ marginBottom: '$3' }}>Find me on <Link bold={false} href="https://linkedin.com/in/andytwomey" title="Andy Twomey on LinkedIn">LinkedIn</Link></Paragraph>
           </Body>
