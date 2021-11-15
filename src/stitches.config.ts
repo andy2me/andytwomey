@@ -7,6 +7,7 @@ export const { css, styled, getCssString, theme } = createCss({
       foreground: 'hsl(0,0%,0%)',
       bgGridFg: 'hsl(215,14%,83%)',
       pink400: 'hsl(280,100%,87%)',
+      yellow500: 'hsl(51,100%,74%)',
     },
     space: {
       1: '5px',
@@ -41,7 +42,8 @@ export const { css, styled, getCssString, theme } = createCss({
     },
     radii: {
       round: '100px',
-      1: '12px'
+      1: '18px',
+      2: '24px'
     }
   },
   utils: {

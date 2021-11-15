@@ -97,14 +97,15 @@ const Body = styled('main', {
 });
 
 const ImagePortrait = styled(m.div, {
+  display: 'flex',
+  flexDirection: 'column',
   flex: '0 0 auto',
-  borderRadius: '$1',
+  borderRadius: '$2',
+  padding: '16px',
   overflow: 'hidden',
-  backgroundColor: '#fff9d7',
-
-  '& > *:first-child': {
-    transition: 'transform 500ms ease',
-  },
+  backgroundColor: '$background',
+  transform: 'rotate(-2.34deg)',
+  filter: 'drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.25))',
 
   variants: {
     constraints: {
@@ -114,17 +115,38 @@ const ImagePortrait = styled(m.div, {
         maxWidth: '405px',
         minHeight: '250px',
         maxHeight: '330px',
-        '& > *:first-child': {
-          transform: 'translateY(-50px)',
-        },
       },
       'landscape': {
         width: '405px',
         minWidth: 'initial',
         maxWidth: 'initial',
-        height: '515px',
+        height: '506px',
         minHeight: 'initial',
         maxHeight: 'initial',
+      },
+    },
+  },
+});
+
+const ImagePortraitInner = styled(m.div, {
+  borderRadius: '$1',
+  overflow: 'hidden',
+  backgroundColor: '$yellow500',
+
+  '& > *:first-child': {
+    transition: 'transform 500ms ease',
+  },
+
+  variants: {
+    constraints: {
+      'portrait': {
+        width: '100%',
+        '& > *:first-child': {
+          transform: 'translateY(-50px)',
+        },
+      },
+      'landscape': {
+        width: '100%',
         '& > *:first-child': {
           transform: 'initial',
         },
@@ -170,13 +192,15 @@ export const HomeScreen = () => {
       <Root layout={{ '@initial': 'portrait', '@bp1': 'landscape' }}>
         <ContentContainer layout={{ '@initial': 'portrait', '@bp1': 'landscape' }}>
           <ImagePortrait constraints={{ '@initial': 'portrait', '@bp1': 'landscape' }}>
-            <Image
-              src="/img/andy-the-hero_gkqyt7.jpg"
-              alt="Andy Twomey"
-              layout="responsive"
-              width={2667}
-              height={3394}
-            />
+            <ImagePortraitInner constraints={{ '@initial': 'portrait', '@bp1': 'landscape' }}>
+              <Image
+                src="/img/andy-the-hero_gkqyt7.jpg"
+                alt="Andy Twomey"
+                layout="responsive"
+                width={2667}
+                height={3394}
+              />
+            </ImagePortraitInner>
           </ImagePortrait>
 
           <Body>

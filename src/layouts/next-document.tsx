@@ -14,7 +14,7 @@ export class DocumentLayout extends NextDocument {
           <meta property="og:type" content="website"/>
           <meta property="og:title" content="Andy Twomey - Helping Marketers is my schtick."/>
           <meta property="og:description" content="Hey, I'm Andy. This is my single page website which explains who I am and how you can follow along or contact me. "/>
-          <meta property="og:image" content="https://res.cloudinary.com/dpsoblb69/image/upload/v1620088330/img/andy-the-og_jcvwkd.png"/>
+          <meta property="og:image" content="https://res.cloudinary.com/dpsoblb69/image/upload/v1637015986/img/andy-the-og_g6l8ah.png"/>
 
           {/*  Twitter Meta Tags */}
           <meta name="twitter:card" content="summary_large_image"/>
@@ -22,7 +22,7 @@ export class DocumentLayout extends NextDocument {
           <meta property="twitter:url" content="https://andytwomey.com/"/>
           <meta name="twitter:title" content="Andy Twomey - Helping Marketers is my schtick."/>
           <meta name="twitter:description" content="Hey, I'm Andy. This is my single page website which explains who I am and how you can follow along or contact me. "/>
-          <meta name="twitter:image" content="https://res.cloudinary.com/dpsoblb69/image/upload/v1620088330/img/andy-the-og_jcvwkd.png"/>
+          <meta name="twitter:image" content="https://res.cloudinary.com/dpsoblb69/image/upload/v1637015986/img/andy-the-og_g6l8ah.png"/>
 
           {/* Icons */}
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
