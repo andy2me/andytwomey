@@ -144,10 +144,10 @@ const Illustration = styled(AnimatedIllustrationTorch, {
         transform: 'translate(0%, -80%)',
       },
       'tablet': {
-        transform: 'translate(20%, -80%)',
+        transform: 'translate(20%, -60%)',
       },
       'desktop': {
-        transform: 'translate(90%, -60%)',
+        transform: 'translate(40%, -60%)',
       },
     },
   },
