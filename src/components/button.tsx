@@ -10,7 +10,7 @@ export const Button = styled('button', {
   fontWeight: '$normal',
   border: '0',
   color: '$foreground',
-  backgroundColor: '$yellow400',
+  backgroundColor: '$pink400',
   borderRadius: '$round',
   transition: 'transform 350ms ease, color 200ms ease, background-color 200ms ease',
   overflow: 'hidden',

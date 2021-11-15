@@ -91,12 +91,11 @@ table {
 
 /* Global background */
 html {
-  background-size: 70px 70px;
-  background-repeat: repeat;
-  background-image:
-    linear-gradient(0deg, ${theme.colors.bgGridFg} 0.51px, transparent 1px),
-    linear-gradient(90deg, ${theme.colors.bgGridFg} 0.51px, transparent 1px);
-  background-position: 35px 35px;
+  background:
+    linear-gradient(90deg, #FFF 20px, transparent 1%) center,
+    linear-gradient(#FFF 20px, transparent 1%) center,
+    ${theme.colors.bgGridFg};
+  background-size: 22px 22px;
 }
 
 /* Sane defaults */

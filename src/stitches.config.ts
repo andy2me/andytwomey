@@ -5,8 +5,8 @@ export const { css, styled, getCssString, theme } = createCss({
     colors: {
       background: 'hsl(0,0%,100%)',
       foreground: 'hsl(0,0%,0%)',
-      bgGridFg: 'hsl(0,0%,95%)',
-      yellow400: 'hsl(51,100%,92%)',
+      bgGridFg: 'hsl(215,14%,83%)',
+      pink400: 'hsl(280,100%,87%)',
     },
     space: {
       1: '5px',

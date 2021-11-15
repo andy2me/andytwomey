@@ -22,7 +22,7 @@ export const LinkText = styled('a', {
     transition: 'transform 150ms ease-out, background-color 150ms ease'
   },
   '&:hover:after,&:active:after,&:focus:after': {
-    backgroundColor: theme.colors.yellow400,
+    backgroundColor: theme.colors.pink400,
     transform: 'scale(1.5, 10) translateY(calc(-40%)) rotate(0.3deg)',
   },
 

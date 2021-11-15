@@ -8,7 +8,7 @@ import {
 import { styled } from '@/local/stitches.config'
 import {
   AnimatedIllustrationTorch,
-} from '@/local/components/illustration-torch'
+} from '@/local/components/illustration-hand'
 import { Heading, Paragraph } from '@/local/components/typography';
 import { Link } from '@/local/components/link';
 
